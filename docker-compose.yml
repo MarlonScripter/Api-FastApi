@@ -1,0 +1,13 @@
+version: "3"
+services:
+
+  postgressrv:
+    image: postgres:12.2-alpine
+    container_name: "bd-postgres"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
